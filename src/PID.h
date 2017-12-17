@@ -40,7 +40,7 @@ public:
     /*
   * PID Control.
   */
-  void Control();
+  double Control();
 
   /*
   * Calculate the total PID error.
