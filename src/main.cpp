@@ -36,7 +36,7 @@ int main()
   // TODO: Initialize the pid variable.
   
 
-  pid_s.Init(-0.06,-0.003,-0.7);
+  pid_s.Init(-0.11,0.0,-1.3);
   pid_t.Init(-0.05,0.0,-0.1);
   double throttle_offset = 0.4;
   h.onMessage([&pid_s, &pid_t, &throttle_offset](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
