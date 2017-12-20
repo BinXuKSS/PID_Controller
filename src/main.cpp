@@ -37,7 +37,7 @@ int main()
   
 
   pid_s.Init(-0.1,-0.0001,-1.2);
-  pid_t.Init(-0.1,0.0,-1.0);
+  pid_t.Init(-0.3,0.0,-0.5);
   double throttle_offset = 0.4;
   h.onMessage([&pid_s, &pid_t, &throttle_offset](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
