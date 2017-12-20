@@ -67,7 +67,7 @@ int main()
 		  steer_value = pid_s.Control(0.0);
 		  
 		  double cte_t = std::fabs(cte);
-		  pid_t.UpdateError(cte);
+		  pid_t.UpdateError(cte_t);
 		  throttle = pid_t.Control(throttle_offset);
           
           
