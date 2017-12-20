@@ -40,7 +40,7 @@ public:
     /*
   * PID Control.
   */
-  double Control();
+  double Control(double offset);
 
   /*
   * Calculate the total PID error.
