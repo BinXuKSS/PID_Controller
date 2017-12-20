@@ -37,7 +37,7 @@ int main()
   
 
   pid_s.Init(-0.1,-0.0001,-1.2);
-  pid_t.Init(-0.1,0,-1);
+  pid_t.Init(-0.1,0.0,-1.0);
   double throttle_offset = 0.4;
   h.onMessage([&pid_s, &pid_t, &throttle_offset](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
@@ -65,6 +65,9 @@ int main()
 		  pid_s.UpdateError(cte);
 
 		  steer_value = pid_s.Control(0.0);
+		  
+		  double cte_t = std::fabs(cte);
+		  pid_t.UpdateError(cte);
 		  throttle = pid_t.Control(throttle_offset);
           
           
