@@ -28,8 +28,8 @@ void PID::UpdateError(double cte) {
 	
 }
 
-double PID::Control() {
-double output = Kp * p_error + Ki * i_error + Kd * d_error;
+double PID::Control(double offset) {
+double output = Kp * p_error + Ki * i_error + Kd * d_error + offset;
 return output;
 
 }
